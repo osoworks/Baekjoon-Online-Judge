@@ -1,20 +1,19 @@
-M = int(input())
-N = int(input())
+m = int(input())
+n = int(input())
+x = []
 
-sosu_list = []
-for num in range(M, N+1):
-    count = 0 
-    if num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                count += 1 # 소수가 아님을 카운트
+for i in range(m,n+1):
+    c = 0
+    if i > 1:
+        for j in range(2,i):
+            if i % j==0:
+                c += 1
                 break
-        if count == 0:
-            sosu_list.append(num)
+        if c == 0:
+            x.append(i)
 
-
-if len(sosu_list) > 0:
-    print(sum(sosu_list))
-    print(min(sosu_list))
-else:
+if len(x) < 1:
     print(-1)
+else:
+    print(sum(x))
+    print(min(x))
